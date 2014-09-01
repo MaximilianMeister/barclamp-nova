@@ -103,7 +103,7 @@
     "nova": {
       "crowbar-revision": 0,
       "crowbar-applied": false,
-      "schema-revision": 7,
+      "schema-revision": 11,
       "element_states": {
         "nova-multi-controller": [ "readying", "ready", "applying" ],
         "nova-multi-compute-hyperv": [ "readying", "ready", "applying" ],
@@ -129,7 +129,13 @@
         "nova-multi-compute-kvm": 97,
         "nova-multi-compute-qemu": 97,
         "nova-multi-compute-vmware": 97,
-        "nova-multi-compute-xen": 97
+        "nova-multi-compute-xen": 97,
+        "nova-multi-controller_remove": 98,
+        "nova-multi-compute-hyperv_remove": 99,
+        "nova-multi-compute-kvm_remove": 99,
+        "nova-multi-compute-qemu_remove": 99,
+        "nova-multi-compute-vmware_remove": 99,
+        "nova-multi-compute-xen_remove": 99
       },
       "config": {
         "environment": "nova-config-base",

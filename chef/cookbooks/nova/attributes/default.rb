@@ -57,6 +57,18 @@ default[:nova][:vcenter][:clusters] = []
 default[:nova][:vcenter][:interface] = ""
 
 #
+# Service settings
+#
+# TODO Xen
+unless %w(suse).include?(node.platform)
+  default[:nova][:controller][:service_name] = ["nova-api","nova-conductor","nova-cert","nova-objectstore","nova-consoleauth","nova-novncproxy","nova-scheduler"]
+  default[:nova][:compute][:service_name] = ["libvirtd","nova-compute"]
+else
+  default[:nova][:controller][:service_name] = ["openstack-nova-api","openstack-nova-conductor","openstack-nova-cert","openstack-nova-objectstore","openstack-nova-consoleauth","openstack-nova-novncproxy","openstack-nova-scheduler"]
+  default[:nova][:compute][:service_name] = ["libvirtd","openstack-nova-compute"]
+end
+
+#
 # Scheduler Settings
 #
 default[:nova][:scheduler][:ram_allocation_ratio] = 1.0
